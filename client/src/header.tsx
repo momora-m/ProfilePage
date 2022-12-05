@@ -22,7 +22,7 @@ const header: VFC = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            ウーバー食達
+            中央大学情報工学研究部ポータルサイト
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>

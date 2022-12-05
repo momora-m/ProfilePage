@@ -1,11 +1,11 @@
 import { VFC } from 'react';
 import Container from '@mui/material/Container';
-import LoginPageView, {LoginPageApp} from './LoginPageView';
+import TopPageView, {TopPageApp} from './TopPageView';
 
 
 
 const MainPage: VFC = () => {
-    const userInfo:LoginPageApp =
+    const userInfo:TopPageApp =
     {
         userId: '1',
         userName: 'Kaito Mishina',
@@ -14,7 +14,7 @@ const MainPage: VFC = () => {
 
     return (
         <Container>
-            <LoginPageView userInfo={userInfo} />
+            <TopPageView userInfo={userInfo} />
         </Container>    
     );
 };

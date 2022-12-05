@@ -1,15 +1,12 @@
 import * as React from 'react';
 import { VFC } from 'react';                                                                                                          
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -22,7 +19,7 @@ function Copyright(props: any) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright ©'}
       <Link color="inherit" href="https://mui.com/">
-        ウーバー食達
+        Gameet
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -34,17 +31,17 @@ function Copyright(props: any) {
 
 const theme = createTheme();
 
-export type LoginPageApp = {
+export type TopPageApp = {
   userId: string;
   userName: string; 
   password: string;
 }
 
 type Props = {
-  userInfo: LoginPageApp;
+  userInfo: TopPageApp;
 }
 
-const LoginPageView: VFC<Props> = (props) => {
+const TopPageView: VFC<Props> = (props) => {
   const history = useHistory();
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -56,11 +53,12 @@ const LoginPageView: VFC<Props> = (props) => {
     });
     history.push('/register');
   };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const  { userInfo } = props;
   return (
     <ThemeProvider theme={theme}>
-      <Paper sx={{width:600,ml:35}}>
-      <Container component="main" maxWidth="xs">
+      <Paper sx={{width:900,height:600,ml:13}}>
+      <Container component="main">
         <CssBaseline />
         <Box
           sx={{
@@ -70,35 +68,11 @@ const LoginPageView: VFC<Props> = (props) => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
+          <Typography component="h4" variant="h5" sx={{mt: 5}}>
+            ここは中央大学の公認サークル、情報工学研究部についてのポータルサイトです！
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              defaultValue={userInfo.userName}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              defaultValue={userInfo.password}
-            />
+            <Link href="https://twitter.com/chuojouken">情報工学研究部Twitter</Link>
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
@@ -109,7 +83,7 @@ const LoginPageView: VFC<Props> = (props) => {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+            ゲームを見る
             </Button>
             <Grid container>
               <Grid item xs>
@@ -132,4 +106,4 @@ const LoginPageView: VFC<Props> = (props) => {
   );
 };
 
-export default LoginPageView;
+export default TopPageView;
