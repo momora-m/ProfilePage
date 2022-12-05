@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
 import { VFC } from 'react';                                                                                                   
 import Grid from '@mui/material/Grid';
@@ -34,43 +35,16 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function BasicCard() {
-  return (
-    <Card sx={{ minWidth: 275}}>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          家族構成
-        </Typography>
-        <FormGroup>
-          <FormControlLabel control={<Checkbox />} label="1~3人" />
-          <FormControlLabel control={<Checkbox />} label="4~6人" />
-          <FormControlLabel control={<Checkbox />} label="7人以上" />
-        </FormGroup>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          1日当たりのカロリー
-        </Typography>
-        <FormGroup>
-          <FormControlLabel control={<Checkbox />} label="1500~2000kcal" />
-          <FormControlLabel control={<Checkbox />} label="2000~3000kcal" />
-          <FormControlLabel control={<Checkbox />} label="3000kcal以上" />
-        </FormGroup>
-      </CardContent>
-    </Card>
-  );
-}
 
 
-const MainPageView: VFC = () => {
+const GameListPageView: VFC = () => {
   const history = useHistory();
-  const moveRecipe = () => {
-    history.push('/recipe');
-  }
   const moveMain = () => {
     history.push('/main');
   }
 
-  const moveStock = () => {
-    history.push('/stock');
+  const moveGame = () => {
+    history.push('/game');
   }
   return (
     <div>   
@@ -78,9 +52,9 @@ const MainPageView: VFC = () => {
         <Grid item xs={2} alignItems="center" justifyItems="center">
           <Item>
           <ThemeProvider theme={theme}>
-              <Button onClick={moveStock}>
+              <Button onClick={moveGame}>
                 <Typography variant="h3">
-                  在庫確認・登録
+                  2022年度のゲーム
                 </Typography>
               </Button>
             </ThemeProvider>
@@ -91,27 +65,15 @@ const MainPageView: VFC = () => {
             <ThemeProvider theme={theme}>
               <Button onClick={moveMain}>
                 <Typography variant="h3">
-                  発注
+                  活動紹介
                 </Typography>
               </Button>
             </ThemeProvider>
           </Item>
-        </Grid>
-        <Grid item xs={2} alignItems="center" justifyItems="center">
-          <Item>
-            <ThemeProvider theme={theme}>
-              <Button onClick={moveRecipe} > 
-                <Typography variant="h3">
-                  レシピ絞りこみ
-                </Typography>
-              </Button>
-            </ThemeProvider>
-            <BasicCard></BasicCard>
-          </Item>
-        </Grid>        
+        </Grid>     
       </Grid>  
     </div>
   );
 };
 
-export default MainPageView;
+export default GameListPageView;

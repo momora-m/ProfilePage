@@ -4,8 +4,8 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import TopPage from './components/login/TopPage';
 import Header from './header'
 import MainPage from './components/main/MainPage';
-import RegisterPage from './components/register/RegisterPage';
-import RecipePage from './components/recipe/RecipePage';
+import GameListPage from './components/gameList/GameListPage';
+import GamePage from './components/game/GamePage';
 import OrderPage from './components/order/OrderPage';
 import StockPage from './components/stock/StockPage';
 import image from '../src/image/3661906.jpg'
@@ -31,8 +31,8 @@ export const App: FC = () => (
         <React.Fragment>
           <Route exact path="/" component={TopPage}></Route>
           <Route exact path="/main" component={MainPage}></Route>
-          <Route exact path="/register" component={RegisterPage}></Route>
-          <Route exact path="/recipe" component={RecipePage}></Route>
+          <Route exact path="/gameList" component={GameListPage}></Route>
+          <Route exact path="/game" component={GamePage}></Route>
           <Route exact path="/order" component={OrderPage}></Route>
           <Route exact path="/stock" component={StockPage}></Route>
         </React.Fragment>

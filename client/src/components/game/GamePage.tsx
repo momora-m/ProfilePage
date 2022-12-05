@@ -1,7 +1,7 @@
 import { VFC } from 'react';
 import Container from '@mui/material/Container';
 
-import RegisterPageView from './RegisterPageView';
+import RecipePageView from './GamePageView';
 
 
 
@@ -9,7 +9,7 @@ const MainPage: VFC = () => {
 
     return (
         <Container>
-            <RegisterPageView />
+            <RecipePageView />
         </Container>    
     );
 };
